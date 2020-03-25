@@ -5,18 +5,10 @@
 #include "debugtrace.h"
 
 UINT_PTR g_timerID;
-HHOOK g_hook;
 HWND g_hwMainWindow;
-HINSTANCE g_hPluginInstance;
-
 
 BOOL APIENTRY DllMain( HINSTANCE hinstDLL, DWORD ul_reason_for_call, LPVOID lpReserved)
 {
-	g_timerID = 0;
-	g_hook = NULL;
-	g_hwMainWindow = NULL;
-	g_hPluginInstance = hinstDLL;
-
 	switch (ul_reason_for_call)
 	{
 		case DLL_PROCESS_ATTACH:
